@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+<html lang="en" ng-app="eventsApp">
+
+<head>
+  <meta charset="utf-8">
+  <title>Event Registration</title>
+  <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="/css/app.css"/>
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="#">Event Register</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div ng-controller="EventController">
+      <div class="row">
+        <img class="mx-auto p-3" ng-src="{{event.imageUrl}}" alt="{{event.name}}"/>
+        <h3 class="p-3">{{event.name}}</h3>
+      </div>
+      <div class="row">
+        <p class="col-4">
+          <strong>Date:</strong> {{event.date}}<br />
+          <strong>Time:</strong> {{event.time}}
+        </p>
+        <p class="col-4">
+          <strong>Address:</strong><br />
+          {{event.location.address}}, <br />
+          {{event.location.city}}, {{event.location.postcode}}
+        </p>
+      </div>
+
+      <hr />
+
+      <h3>Sessions</h3>
+
+      <div class="card text-white bg-dark mt-4" ng-repeat="session in event.sessions">
+        <div class="card-body">
+          <h4 class="card-title">{{session.name}}</h4>
+          <p class="card-text"><strong>
+            {{session.creatorName}}</strong>
+            Duration: {{session.duration}}<br />
+            Level:{{session.level}}<br />
+            {{session.abstract}}
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <script src="/lib/jquery-3.3.1.min.js"></script>
+  <script src="/lib/underscore.js"></script>
+  <script src="/lib/bootstrap.min.js"></script>
+  <script src="/lib/angular.min.js"></script>
+  <script src="/js/app.js"></script>
+  <script src="/js/controllers/EventController.js"></script>
+
+</body>
+
+</html>
