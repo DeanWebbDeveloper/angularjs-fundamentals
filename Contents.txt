@@ -21,3 +21,8 @@
 	3.13	-	Expressions
 	3.15	-	Built-in Filters
 	3.16	-	Writing Custom Filters
+	3.18	-	Demo: Two Way Binding
+	3.19	-	Validation
+	3.20	-	Summary
+
+4	-	Creating and Using Angular Services
