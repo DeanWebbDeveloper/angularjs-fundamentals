@@ -26,3 +26,11 @@
 	3.20	-	Summary
 
 4	-	Creating and Using Angular Services
+	4.2		-	Creating Your First Custom Service
+	4.3		-	Another Custom Service Example
+	4.5		-	Using Angular's $http Service
+	4.6		-	Updating a Node Server for JSON Requests
+	4.7		-	Updating an IIS Server for JSON Requests
+	4.8		-	Using $http Promises
+	4.9		-	Using Angular's $resource Service
+	4.10	-	Saving Data with $resource
