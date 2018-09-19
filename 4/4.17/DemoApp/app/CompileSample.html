@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+
+<html lang="en" ng-app="eventsApp">
+
+<head>
+  <meta charset="utf-8">
+  <title>Event Registration</title>
+  <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="/css/app.css"/>
+</head>
+
+<body ng-cloak>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="#">Event Register</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="/EventDetails.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/NewEvent.html">Create Event</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/EditProfile.html">Edit Profile</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container" ng-controller="CompileSampleController">
+
+    <div class="row">
+      <h2 class="p-3">Compile Sample</h2>
+    </div>
+
+    <div id="appendHere"></div>
+    <br />
+
+    <form class="form">
+
+      <div class="row">
+        <div class="form-group col-md-6 col-12">
+          <div class="row">
+            <label for="name" class="col-lg-2 col-md-3 col-12 col-form-label">Name: </label>
+            <div class="col-lg-10 col-md-9 col-12">
+              <input type="text" class="form-control" id="name" ng-model="name" />
+            </div>
+          </div>
+        </div>
+        <div class="form-group col-md-6 col-12">
+          <div class="row">
+            <label for="markup" class="col-lg-2 col-md-3 col-12 col-form-label">Markup: </label>
+            <div class="col-lg-10 col-md-9 col-12">
+              <input type="text" class="form-control" id="markup" ng-model="markup" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button class="btn btn-primary" ng-click="appendDivToElement(markup)">Append</button>
+
+    </form>
+
+  </div>
+
+  <script src="/lib/jquery-3.3.1.min.js"></script>
+  <script src="/lib/underscore.js"></script>
+  <script src="/lib/bootstrap.min.js"></script>
+  <script src="/lib/angularjs/angular.min.js"></script>
+  <script src="/lib/angularjs/angular-sanitize.min.js"></script>
+  <script src="/lib/angularjs/angular-resource.min.js"></script>
+  <script src="/js/app.js"></script>
+  <script src="/js/controllers/CompileSampleController.js"></script>
+  <script src="/js/services/EventData.js"></script>
+  <script src="/js/filters.js"></script>
+
+</body>
+
+</html>

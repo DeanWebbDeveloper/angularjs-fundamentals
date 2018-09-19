@@ -34,3 +34,14 @@
 	4.8		-	Using $http Promises
 	4.9		-	Using Angular's $resource Service
 	4.10	-	Saving Data with $resource
+	4.11	-	Using Angular's $anchorScroll Service
+	4.12	-	Using Angular's $cacheFactor Service
+	4.13	-	Using Angular's $compile Service
+	4.14	-	Using Angular's $parse Service
+	4.15	-	Using Angular's $locale Service
+	4.16	-	Using Angular's $timeout Service
+	4.17	-	Using Angular's $exceptionHandler Service
+	4.18	-	Using Angular's $filter Service
+	4.19	-	Using Angular's $cookieStore Service
+	4.20	-	Overview of Less Common Angular Services
+	4.21	-	Suggested Exercises

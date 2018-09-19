@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+
+<html lang="en" ng-app="eventsApp">
+
+<head>
+  <meta charset="utf-8">
+  <title>Event Registration</title>
+  <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="/css/app.css"/>
+</head>
+
+<body ng-cloak>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="#">Event Register</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/EventDetails.html">Home</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="/NewEvent.html">Create Event</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/EditProfile.html">Edit Profile</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <style>
+    input.ng-invalid.ng-dirty {
+      background-color: pink;
+    }
+  </style>
+
+  <div class="container" ng-controller="EditEventController">
+    <div class="row">
+      <h2 class="p-3">Edit Event</h2>
+    </div>
+
+    <div class="row">
+      <div class="col-12">
+        <form class="form" name="newEventForm">
+
+          <div class="form-row">
+            <div class="col-12">
+              <div class="form-group">
+                <label for="eventName">Event Name:</label>
+                <input type="text" ng-model="event.name" class="form-control mb-3" name="eventName" placeholder="Name of your Event" required />
+                <span class="text-danger" ng-show="newEventForm.eventName.$error.required && newEventForm.eventName.$dirty">Required</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="col-lg-6 col-md-6 col-12">
+              <div class="form-group">
+                <label for="eventDate">Event Date:</label>
+                <input type="text" ng-model="event.date" ng-pattern="/^(0[1-9]|[1-2][0-9]|3[0-1])/(0[1-9]|1[0-2])/[0-9]{4}/" class="form-control mb-3" name="eventDate" placeholder=" Format (DD/MM/YYYY) required" required />
+                <span class="text-danger" ng-show="newEventForm.eventDate.$error.required && newEventForm.eventDate.$dirty">Required</span>
+                <span class="text-danger" ng-show="newEventForm.eventDate.$error.pattern && newEventForm.eventDate.$dirty">Incorrect format. DD/MM/YYYY Required</span>
+              </div>
+            </div>
+
+            <div class="col-lg-6 col-md-6 col-12">
+              <div class="form-group">
+                <label for="eventTime">Event Time:</label>
+                <input type="text" ng-model="event.time" ng-pattern="/^((1[0-2]|0?[1-9]).([0-5][0-9]) ([AaPp][Mm]))/" class="form-control mb-3" name="eventTime" placeholder="Format (HH.MM am/pm) required" required/>
+                <span class="text-danger" ng-show="newEventForm.eventTime.$error.required && newEventForm.eventTime.$dirty">Required</span>
+                <span class="text-danger" ng-show="newEventForm.eventTime.$error.pattern && newEventForm.eventTime.$dirty">Incorrect format. HH.MM am/pm Required</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="col-lg-6 col-md-6 col-12">
+              <div class="form-group">
+                <label for="eventAddress">Event Location:</label>
+                <input type="text" ng-model="event.location.address" class="form-control mb-3" name="eventAddress" placeholder="Address" required/>
+                <input type="text" ng-model="event.location.city" class="form-control mb-3" name="eventCity" placeholder="City" required/>
+                <input type="text" ng-model="event.location.postcode" class="form-control mb-3" name="eventPostcode" placeholder="Postcode" required/>
+                <span class="text-danger" ng-show="newEventForm.eventAddress.$error.required && newEventForm.eventAddress.$dirty">Address required<br/></span>
+                <span class="text-danger" ng-show="newEventForm.eventCity.$error.required && newEventForm.eventCity.$dirty">City required<br/></span>
+                <span class="text-danger" ng-show="newEventForm.eventPostcode.$error.required && newEventForm.eventPostcode.$dirty">Postcode required</span>
+              </div>
+            </div>
+
+            <div class="col-lg-6 col-md-6 col-12">
+              <div class="form-group">
+                <label for="eventImageUrl">Image:</label>
+                <input type="url" ng-model="event.imageUrl" class="form-control mb-3" name="eventImageUrl" placeholder="Url of image" />
+                <img ng-src="{{event.imageUrl}}" class="img-fluid" />
+                <div class="text-right pt-md-3 mt-3">
+                  <button type="submit" ng-disabled="newEventForm.$invalid" ng-click="saveEvent(event, newEventForm)" class="btn btn-primary">Save</button>
+                  <button type="button" ng-click="cancelEdit()" class="btn btn-danger">Cancel</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="/lib/jquery-3.3.1.min.js"></script>
+  <script src="/lib/underscore.js"></script>
+  <script src="/lib/bootstrap.min.js"></script>
+  <script src="/lib/angularjs/angular.min.js"></script>
+  <script src="/lib/angularjs/angular-sanitize.min.js"></script>
+  <script src="/lib/angularjs/angular-resource.min.js"></script>
+  <script src="/js/app.js"></script>
+  <script src="/js/controllers/EventController.js"></script>
+  <script src="/js/controllers/EditEventController.js"></script>
+  <script src="/js/services/EventData.js"></script>
+  <script src="/js/filters.js"></script>
+
+</body>
+
+</html>
