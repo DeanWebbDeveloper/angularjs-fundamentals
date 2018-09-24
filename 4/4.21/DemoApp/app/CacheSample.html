@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+
+<html lang="en" ng-app="eventsApp">
+
+<head>
+  <meta charset="utf-8">
+  <title>Event Registration</title>
+  <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="/css/app.css"/>
+</head>
+
+<body ng-cloak>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="#">Event Register</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="/EventDetails.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/NewEvent.html">Create Event</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/EditProfile.html">Edit Profile</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Dropdown
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="/CacheSample.html">Cache Sample</a>
+              <a class="dropdown-item" href="/CompileSample.html">Compile Sample</a>
+              <a class="dropdown-item" href="/LocaleSample.html">Locale Sample</a>
+              <a class="dropdown-item" href="/TimeoutSample.html">Timeout Sample</a>
+              <a class="dropdown-item" href="/FilterSample.html">Filter Sample</a>
+              <a class="dropdown-item" href="/CookieStoreSample.html">Cookie Store Sample</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container" ng-controller="CacheSampleController">
+
+    <div class="row">
+      <h2 class="p-3">Cache Sample</h2>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-8 col-12">
+        <form class="form" name="cacheForm">
+
+          <div class="form-row">
+            <div class="col-md-6 col-12">
+              <div class="form-group">
+                <label for="key">Key:</label>
+                <input type="text" ng-model="key" class="form-control mb-3" name="key" placeholder="Key" />
+              </div>
+            </div>
+
+            <div class="col-md-6 col-12">
+              <div class="form-group">
+                <label for="value">Value:</label>
+                <input type="text" ng-model="value" class="form-control mb-3" name="value" placeholder="Value" />
+              </div>
+            </div>
+
+          </div>
+
+          <div class="form-row">
+            <div class="col-12">
+              <div class="form-group">
+                  <button type="button" class="btn btn-primary form-control" ng-click="addToCache(key, value)">Add To Cache</button>
+              </div>
+            </div>
+          </div>
+
+          <br />
+          <h6 style="margin-top:-20px">Cache Stats: {{getCacheStats()}}</h6>
+
+
+        </form>
+      </div>
+
+      <div class="col-lg-4 col-12 mt-lg-0 mt-4">
+        <form class="form" name="cacheReadForm">
+
+          <div class="form-row">
+            <div class="col-12">
+              <div class="form-group">
+                <label for="KeyToRead">Key to Read: </label>
+                <input id="KeyToRead" class="form-control" type="text" ng-model="keyToRead" /><br />
+              </div>
+            </div>
+          </div>
+
+          <h6 style="margin-top:-20px">Value from Cache: {{readFromCache(keyToRead)}}</h6>
+
+        </form>
+
+
+      </div>
+
+    </div>
+
+  <script src="/lib/jquery-3.3.1.min.js"></script>
+  <script src="/lib/underscore.js"></script>
+  <script src="/lib/bootstrap.min.js"></script>
+  <script src="/lib/angularjs/angular.min.js"></script>
+  <script src="/lib/angularjs/angular-sanitize.min.js"></script>
+  <script src="/lib/angularjs/angular-resource.min.js"></script>
+  <script src="/js/app.js"></script>
+  <script src="/js/controllers/CacheSampleController.js"></script>
+  <script src="/js/services/EventData.js"></script>
+  <script src="/js/filters.js"></script>
+
+</body>
+
+</html>

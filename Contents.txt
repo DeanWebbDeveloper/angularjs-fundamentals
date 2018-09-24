@@ -43,5 +43,4 @@
 	4.17	-	Using Angular's $exceptionHandler Service
 	4.18	-	Using Angular's $filter Service
 	4.19	-	Using Angular's $cookieStore Service
-	4.20	-	Overview of Less Common Angular Services
 	4.21	-	Suggested Exercises
