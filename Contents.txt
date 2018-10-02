@@ -44,3 +44,15 @@
 	4.18	-	Using Angular's $filter Service
 	4.19	-	Using Angular's $cookieStore Service
 	4.21	-	Suggested Exercises
+
+5	-	Angular Routing
+	5.4		- Adding Your First Angular Route
+	5.5		-	More Routing and Browser History
+	5.6		-	Creating a Default Route
+	5.7		-	Accessing Parameters from the Route
+	5.8		-	Using Angular's $route Service
+	5.9		-	Enabling HTML5 Routing
+	5.10	-	Template and Resolve Properties
+	5.11	-	Using Angular's $location Service
+	5.12	- Summary
+	5.13	-	Suggested Exercises

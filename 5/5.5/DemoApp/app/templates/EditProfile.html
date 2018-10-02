@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+
+<html lang="en" ng-app="eventsApp">
+
+<head>
+  <meta charset="utf-8">
+  <title>Event Registration</title>
+  <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="/css/app.css"/>
+</head>
+
+<body ng-cloak>
+
+  <!--
+  Exercises
+
+  1.  Update the save method of the eventData service to lookup next eventId by finding the highest event id of all existing events and incrementing by one (instead of just setting it to 999).
+  2.  Wire up the Save button on the EditProfile page to save the user using a new service called userData. Use a $resource and save them to the url: 'data/user/:userName'
+  3.  Store the user's session-upvotes in a cookie and only allow the user to upvote each session once.
+  4.  Or, for a more advanced challenge, allow users to log in after storing their user profile and when they upvote, track their upvotes in their user profile object.
+
+  Could not complete challenges at this time.
+  -->
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="#">Event Register</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="/EventDetails.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/NewEvent.html">Create Event</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/EditProfile.html">Edit Profile</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container" ng-controller="EditProfileController">
+    <div class="row">
+      <h2 class="p-3">Edit Profile</h2>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <form class="form" name="profileForm">
+
+          <div class="form-row">
+
+            <div class="col-lg-2 col-md-4 col-12">
+              <div class="form-group">
+                <img class="img-fluid" ng-src="{{getGravatarUrl(user.emailAddress)}}" />
+              </div>
+            </div>
+
+            <div class="col-lg-5 col-md-8 col-12">
+              <div class="row">
+                <div class="offset-lg-1 col-lg-11 col-12">
+                  <div class="form-group">
+                    <label for="userName">User Name:</label>
+                    <input class="form-control" focus id="userName" required ng-pattern="/^[-A-Za-z0-9]{2,20}$/" type="text" placeholder="Username" ng-model="user.userName" />
+                  </div>
+                  <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input class="form-control" id="password" required type="password" placeholder="Password" ng-model="user.password" />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-5 col-md-12 col-12">
+              <div class="row">
+                <div class="offset-lg-1 col-lg-11 col-12">
+                  <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input class="form-control" id="name" type="text" placeholder="Name" ng-model="user.name" />
+                  </div>
+                  <div class="form-group">
+                    <label for="emailAddress">Email Address:</label>
+                    <input class="form-control" id="emailAddress" type="email" placeholder="Email Address" ng-model="user.emailAddress" />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="form-row">
+
+            <div class="col-12">
+              <div class="form-group">
+                <label for="bio">Bio:</label>
+                <textarea class="form-control" id="bio" rows="6" style="color:#52575c" placeholder="Bio" ng-model="user.bio"></textarea>
+
+                <div class="text-right mt-3">
+                  <button type="submit" class="btn btn-primary">Save</button>
+                  <button type="button" class="btn btn-danger">Cancel</button>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </form>
+      </div>
+    </div>
+
+  </div>
+
+
+  <script src="/lib/jquery-3.3.1.min.js"></script>
+  <script src="/lib/underscore.js"></script>
+  <script src="/lib/bootstrap.min.js"></script>
+  <script src="/lib/angularjs/angular.min.js"></script>
+  <script src="/lib/angularjs/angular-resource.min.js"></script>
+  <script src="/js/app.js"></script>
+  <script src="/js/controllers/EditProfileController.js"></script>
+  <script src="/js/services/GravatarUrlBuilder.js"></script>
+  <script src="/js/filters.js"></script>
+
+</body>
+</html>
