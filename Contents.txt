@@ -54,5 +54,4 @@
 	5.9		-	Enabling HTML5 Routing
 	5.10	-	Template and Resolve Properties
 	5.11	-	Using Angular's $location Service
-	5.12	- Summary
 	5.13	-	Suggested Exercises
