@@ -26,6 +26,7 @@
 	3.20	-	Summary
 
 4	-	Creating and Using Angular Services
+
 	4.2		-	Creating Your First Custom Service
 	4.3		-	Another Custom Service Example
 	4.5		-	Using Angular's $http Service
@@ -46,6 +47,7 @@
 	4.21	-	Suggested Exercises
 
 5	-	Angular Routing
+
 	5.4		- Adding Your First Angular Route
 	5.5		-	More Routing and Browser History
 	5.6		-	Creating a Default Route
@@ -55,3 +57,19 @@
 	5.10	-	Template and Resolve Properties
 	5.11	-	Using Angular's $location Service
 	5.13	-	Suggested Exercises
+
+6	-	Creating Custom Angular Directives
+
+	6.2		-	Creating Your First Angular Directive
+	6.3		- Domain Specific Language via Custom Elements
+	6.4		-	Isolating Directive Scope
+	6.5		-	Exploring Isolate Scope Bindings
+	6.6		-	Handling Events with Directives
+	6.7		-	Observing and Responding to Changes
+	6.8		-	Using Controllers within Directives
+	6.9		-	Sharing Directive Controllers via Require
+	6.10	-	Directive Priority and using Terminal
+	6.11	-	Using Require with Nested Directives
+	6.12	-	Understanding Transclusion
+	6.13	-	Using Compile to Transform the DOM
+	6.14	-	Making jQuery More Explicit with Directives
