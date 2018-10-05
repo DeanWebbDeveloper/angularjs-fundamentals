@@ -1,0 +1,67 @@
+<div class="row">
+  <h2 class="p-3">Edit Event</h2>
+</div>
+
+<div class="row">
+  <div class="col-12">
+    <form class="form" name="newEventForm">
+
+      <div class="form-row">
+        <div class="col-12">
+          <div class="form-group">
+            <label for="eventName">Event Name:</label>
+            <input type="text" data-ng-model="event.name" class="form-control mb-3" name="eventName" id="eventName" placeholder="Name of your Event" required />
+            <span class="text-danger" data-ng-show="newEventForm.eventName.$error.required && newEventForm.eventName.$dirty">Required</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="col-lg-6 col-md-6 col-12">
+          <div class="form-group">
+            <label for="eventDate">Event Date:</label>
+            <input type="text" data-ng-model="event.date" data-date-keys data-ng-pattern="/^(0[1-9]|[1-2][0-9]|3[0-1])/(0[1-9]|1[0-2])/[0-9]{4}/" class="form-control mb-3" name="eventDate" id="eventDate" placeholder=" Format (DD/MM/YYYY) required" required />
+            <span class="text-danger" data-ng-show="newEventForm.eventDate.$error.required && newEventForm.eventDate.$dirty">Required</span>
+            <span class="text-danger" data-ng-show="newEventForm.eventDate.$error.pattern && newEventForm.eventDate.$dirty">Incorrect format. DD/MM/YYYY Required</span>
+          </div>
+        </div>
+
+        <div class="col-lg-6 col-md-6 col-12">
+          <div class="form-group">
+            <label for="eventTime">Event Time:</label>
+            <input type="text" data-ng-model="event.time" data-ng-pattern="/^((1[0-2]|0?[1-9]).([0-5][0-9]) ([AaPp][Mm]))/" class="form-control mb-3" name="eventTime" id="eventTime" placeholder="Format (HH.MM am/pm) required" required/>
+            <span class="text-danger" data-ng-show="newEventForm.eventTime.$error.required && newEventForm.eventTime.$dirty">Required</span>
+            <span class="text-danger" data-ng-show="newEventForm.eventTime.$error.pattern && newEventForm.eventTime.$dirty">Incorrect format. HH.MM am/pm Required</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="col-lg-6 col-md-6 col-12">
+          <div class="form-group">
+            <label for="eventAddress">Event Location:</label>
+            <input type="text" data-ng-model="event.location.address" class="form-control mb-3" name="eventAddress" id="eventAddress" placeholder="Address" required/>
+            <input type="text" data-ng-model="event.location.city" class="form-control mb-3" name="eventCity" placeholder="City" required/>
+            <input type="text" data-ng-model="event.location.postcode" class="form-control mb-3" name="eventPostcode" placeholder="Postcode" required/>
+            <span class="text-danger" data-ng-show="newEventForm.eventAddress.$error.required && newEventForm.eventAddress.$dirty">Address required<br/></span>
+            <span class="text-danger" data-ng-show="newEventForm.eventCity.$error.required && newEventForm.eventCity.$dirty">City required<br/></span>
+            <span class="text-danger" data-ng-show="newEventForm.eventPostcode.$error.required && newEventForm.eventPostcode.$dirty">Postcode required</span>
+          </div>
+        </div>
+
+        <div class="col-lg-6 col-md-6 col-12">
+          <div class="form-group">
+            <label for="eventImageUrl">Image:</label>
+            <input type="url" data-ng-model="event.imageUrl" class="form-control mb-3" name="eventImageUrl" id="eventImageUrl" placeholder="Url of image" />
+            <img data-ng-src="{{event.imageUrl}}" class="img-fluid" alt="{{event.name}}" />
+            <div class="text-right pt-md-3 mt-3">
+              <button type="submit" data-ng-disabled="newEventForm.$invalid" data-ng-click="saveEvent(event, newEventForm)" class="btn btn-primary">Save</button>
+              <button type="button" data-ng-click="cancelEdit()" class="btn btn-danger">Cancel</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </form>
+  </div>
+</div>

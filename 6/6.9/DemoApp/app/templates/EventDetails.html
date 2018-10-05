@@ -1,0 +1,72 @@
+<div class="row">
+  <img class="mx-auto p-3" data-ng-src="{{event.imageUrl}}" alt="{{event.name}}"/>
+</div>
+
+<div class="row">
+  <h2 class="p-3">{{event.name | uppercase}}</h2>
+</div>
+
+<div class="row">
+  <div class="col-4">
+    <div><strong>Date:</strong> {{event.date | date: 'mediumDate'}}</div>
+    <div><strong>Time:</strong> {{event.time}}</div>
+    <div><strong>Price:</strong> {{34 | currency:'£' }}</div>
+  </div>
+  <address class="col-4">
+    <strong>Address:</strong><br />
+    {{event.location.address}}, <br />
+    {{event.location.city}}, {{event.location.postcode}}
+  </address>
+</div>
+
+<hr />
+
+<h3>Sessions</h3>
+
+Order By:
+<select data-ng-model="sortorder" class="input-small">
+  <option selected value="name">Name</option>
+  <option value="-upVoteCount">Votes</option>
+</select>
+&nbsp;
+Show:
+<select data-ng-model="query.level" class="input-medium">
+  <option selected value="">All</option>
+  <option value="introductory">Introductory</option>
+  <option value="intermediate">Intermediate</option>
+  <option value="advanced">Advanced</option>
+</select>
+
+<div class="row" data-ng-repeat="session in event.sessions | orderBy:sortorder | filter:query" id="session{{session.id}}">
+
+  <div class="col-lg-1 col-md-2 col-3">
+    <upvote upvote="upVoteSession(session)" downvote="downVoteSession(session)" count="session.upVoteCount" />
+  </div>
+
+  <div class="col-lg-11 col-md-10 col-9">
+    <div class="card text-white bg-dark m-0 mt-4">
+      <div class="card-body">
+        <h4 class="card-title">{{session.name}}</h4>
+        <p class="card-text">
+          <strong>{{session.creatorName}}</strong><br />
+          Duration: {{session.duration | durations }}<br />
+          Level:
+            <span data-ng-switch="session.level">
+              <span data-ng-switch-when="Introductory">
+                &#9733;&#9734;&#9734;
+              </span>
+              <span data-ng-switch-when="Intermediate">
+                &#9733;&#9733;&#9734;
+              </span>
+              <span data-ng-switch-when="Advanced">
+                &#9733;&#9733;&#9733;
+              </span>
+            </span>
+            <br />
+          {{session.abstract}}
+        </p>
+      </div>
+    </div>
+  </div>
+
+</div>
