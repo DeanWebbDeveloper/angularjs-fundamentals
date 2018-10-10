@@ -74,3 +74,22 @@
 	6.13	-	Using Compile to Transform the DOM
 	6.14	-	Making jQuery More Explicit with Directives
 	6.15	-	Summary
+
+7	-	Testing Angular
+
+	7.2		-	Installing Karma
+	7.4		-	Testing Controllers in Angular
+	7.5		-	Testing Controllers in Angular Part 2
+	7.6		-	Testing Services in Angular
+	7.7		-	Testing Services with Dependencies
+	7.8		-	Testing AJAX Services in Angular
+	7.9		-	Testing AJAX Services in Angular Part 2
+	7.10	-	Testing Filters in Angular
+	7.11	-	Testing Directives - Overview
+	7.12	-	Setting up Karma for testing Directives
+	7.13	-	Testing Directives in Angular
+	7.14	-	End to End testing - Overview
+	7.15	-	Setting up Protractor
+	7.16	-	Setting up Protractor with Webstorm
+	7.17	-	Angular End to End testing - Part 1
+	7.18	-	Angular End to End testing - Part 2
