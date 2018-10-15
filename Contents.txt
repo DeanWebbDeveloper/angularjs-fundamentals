@@ -85,10 +85,8 @@
 	7.8		-	Testing AJAX Services in Angular
 	7.9		-	Testing AJAX Services in Angular Part 2
 	7.10	-	Testing Filters in Angular
-	7.11	-	Testing Directives - Overview
 	7.12	-	Setting up Karma for testing Directives
 	7.13	-	Testing Directives in Angular
-	7.14	-	End to End testing - Overview
 	7.15	-	Setting up Protractor
 	7.16	-	Setting up Protractor with Webstorm
 	7.17	-	Angular End to End testing - Part 1
