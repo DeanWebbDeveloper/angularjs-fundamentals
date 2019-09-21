@@ -8,7 +8,7 @@ To use the project, each must be installed.
 
 ### AngularJS
 
-To install the Angular application (3.1 onwards, inside the DemoApp folder):
+To install the AngularJS application (3.1 onwards, inside the DemoApp folder):
 
 ```sh
 npm install
