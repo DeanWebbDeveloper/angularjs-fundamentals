@@ -2,6 +2,29 @@
 
 [Pluralsight Course by Joe Eames and Jim Cooper](https://app.pluralsight.com/library/courses/angularjs-fundamentals/table-of-contents)
 
+
+## Installation
+
+To use the project, each must be installed. 
+
+### AngularJS
+
+To install the Angular application (3.1 onwards, inside the DemoApp folder):
+
+```sh
+npm install
+```
+
+To run it:
+
+```sh
+server.sh
+```
+
+### AppData
+
+To install the AppData project (4.7 onwards), open the AppData.sln file and run the build.
+
 ## Contents
 
 ### 2 - Introduction to Angular
