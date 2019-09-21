@@ -30,7 +30,7 @@ namespace AppData.Controllers
           System.IO.File.WriteAllText(path + "../app/data/event" + id + ".json", eventData.ToString(Formatting.None));
         }
 
-        private JArrayGetAllJsonEventsAsArray()
+        private JArray GetAllJsonEventsAsArray()
         {
           var path = System.Web.Hosting.HostingEnvironment.MapPath("/");
           var contents = "";
