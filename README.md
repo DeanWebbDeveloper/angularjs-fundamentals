@@ -2,10 +2,9 @@
 
 [Pluralsight Course by Joe Eames and Jim Cooper](https://app.pluralsight.com/library/courses/angularjs-fundamentals/table-of-contents)
 
-
 ## Installation
 
-To use the project, each must be installed. 
+To use the project, each must be installed.
 
 ### AngularJS
 
